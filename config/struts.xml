@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+   <!-- 常量 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+     <!-- 包 -->
+    <package name="hrm" namespace="/" extends="struts-default">
+      <!-- 全局参数
+        <default-action-ref name="loginjsp" />
+        <global-results>
+            <result name="error">/admin/login.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+         -->
+        <action name="login" class="com.mzmy.HRManager.actions.AdminAction">
+            <result name="index">
+                /index.jsp
+            </result>
+        </action>
+    </package>
+    <!-- 包含外部文件 合并struts文件 -->
+    <include file="struts2xml/struts_title.xml"/>
+    <include file="struts2xml/struts_dept.xml"/>
+    <include file="struts2xml/struts_staff.xml"/>
+</struts>
